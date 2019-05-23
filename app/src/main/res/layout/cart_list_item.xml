@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_margin"
+    android:paddingTop="@dimen/activity_margin">
+
+    <ImageView
+        android:id="@+id/thumbnail"
+        android:layout_width="100dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/shopping_basket"
+        android:layout_marginRight="@dimen/value_5dp"
+        android:layout_marginLeft="@dimen/value_5dp"
+        android:layout_height="100dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/thumbnail"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:lineSpacingExtra="2sp"
+            android:text="Fossil FS4552 MACHINE Watch"
+            android:textColor="#2e2e2e"
+            android:textSize="14sp"
+            android:textStyle="normal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif"
+                android:lineSpacingExtra="2sp"
+                android:text="₹3,500 x 2"
+                android:textColor="#4d4d4d"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/value_5dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ic_remove"
+                    android:layout_width="@dimen/ic_add_cart_width"
+                    android:layout_height="@dimen/ic_add_cart_width"
+                    android:src="@drawable/ic_remove" />
+
+                <TextView
+                    android:id="@+id/product_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center_horizontal"
+                    android:lineSpacingExtra="2sp"
+                    android:paddingLeft="@dimen/activity_margin_half"
+                    android:paddingRight="@dimen/activity_margin_half"
+                    android:text="1"
+                    android:textColor="@color/selected_product_count"
+                    android:textSize="@dimen/selected_product_count"
+                    android:textStyle="normal" />
+
+                <ImageView
+                    android:id="@+id/ic_add"
+                    android:layout_width="@dimen/ic_add_cart_width"
+                    android:layout_height="@dimen/ic_add_cart_width"
+                    android:src="@drawable/ic_add" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tot_hrg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="₹3,500 x 2"
+            android:textColor="#4d4d4d"
+            android:textSize="14sp"
+            android:textStyle="normal" />
+
+        <Button
+            android:id="@+id/btn_remove"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/btn_remove_item"
+            android:layout_marginTop="@dimen/activity_margin_half"
+            android:background="@drawable/bg_btn_remove_item"
+            android:foreground="?attr/selectableItemBackground"
+            android:paddingLeft="@dimen/activity_margin_half"
+            android:paddingRight="@dimen/activity_margin_half"
+            android:text="Remove Item"
+            android:textAllCaps="false"
+            android:textColor="@color/btn_remove_item"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
