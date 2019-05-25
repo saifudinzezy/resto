@@ -1,5 +1,7 @@
 package com.example.saifudin.morapos.activiy;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -23,6 +25,7 @@ import java.util.Locale;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.Unbinder;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
@@ -39,6 +42,10 @@ public class Pesanan extends AppCompatActivity implements PemesananAdapter.Pemes
     List<Pemesanan> listPemesanan;
     PemesananAdapter pemesananAdapter;
     int quantity;
+    Unbinder unbinder;
+
+    private Context mContext;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,8 +63,13 @@ public class Pesanan extends AppCompatActivity implements PemesananAdapter.Pemes
 
         listPemesanan = new ArrayList<>();
         listPemesanan = realmHelper.getAllMahasiswa();
-
+        init();
         show();
+    }
+
+    public void init(){
+        unbinder = ButterKnife.bind(this);
+        mContext = this;
     }
 
     @OnClick({R.id.ic_close, R.id.btn_checkout})
@@ -67,9 +79,11 @@ public class Pesanan extends AppCompatActivity implements PemesananAdapter.Pemes
                 finish();
                 break;
             case R.id.btn_checkout:
+                startActivity(new Intent(mContext, Diskon.class));
                 break;
         }
     }
+
 
     @Override
     protected void onRestart() {
